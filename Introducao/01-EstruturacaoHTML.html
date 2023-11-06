@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <h1>Estruturando uma página HTML</h1>
+
+    As tags &lt;div&gt; e &lt;span&gt; não tem peso semântico, elas servem para delimitar um espaço no HTML que poderá ser 
+    manipulado com CSS.
+
+    <h2>Idealizando a página a ser criada:</h2>
+
+    <p>Antes de sair escrevendo o código, é profissional fazer um esboço simples do layout que a página vai ter, em que posição vai ficar 
+        cada elemeto, e se possível, quais as funcionalidades que existirão na página.<br>
+    As configurações de CSS e JS são construídas em cima dessa estruturação.<br>
+        <b>OBS: Esse layout normalmente é criado por um profissional UX/UI.</b></p>
+    
+    <p>Dito isso, a tag &lt;div&gt; delimita um bloco ocupando toda a extenção horizontal da página por padrão. Isso tem o nome de 
+        <i>display block</i>. Você pode utilizar uma &lt;div&gt; dentro de outra, de acordo com a necessidade de formatação CSS da 
+        estrutura da página.<br>
+        A tag &lt;span&gt; delimita apenas o trecho específico, ou seja, se eu tenho um "." no meio de um texto e eu quero, por exemplo,
+        alterar a cor apena dessa ponto, ou de uma letra específica, eu uso a tag &lt;span&gt;.<br>
+        <b>OBS: </b>Essa estilização delimitada ponto a ponto não seria possível apenas com a tag &lt;p&gt;, por isso que é comum ver a 
+        estrutura: &lt;p&gt;&lt;span&gt;.
+    </p>
+
+    <p>Para delimitação visual, muito utilizada em fomulários, temos a tag &lt;fieldset&gt;. Ela delimita visualmente um retângulo em 
+        volta do conteúdo que está dentro dela. Uma subtag (tag filha) que pode ser utilizada com essa tag é a &lt;legend&gt;.<br>
+        Ex:
+    </p>
+
+    <fieldset>
+        <legend>Dados pessoais</legend>
+            <form>
+                <label>Nome: </label><input type="text">
+                <label>Idade: </label><input type="number" min="0" max="100">
+            </form>
+    </fieldset>
+
+    <h2>Carregamento de conteúdo de forma assíncrona na página:</h2>
+
+    <p>Voltando um pouco no início da internet, quando as páginas HTML coeçaram a ter mais conteúdo, surgiu a necessidade 
+        de carregar itens da página de forma independente. Por exemplo, nos anos 90, se o body não tivesse sido completamente caregado
+        o head não ia aparecer na página, ou seja o carregamento da página era síncrono, todos os elementos seriam exibidos juntos
+        uma vez que todos os elementos tivessem sido carregados.<br></p>
+
+    <h3>Tag &lt;embed&gt;</h3>
+        
+    <p>Como as páginas começaram a ficar muito pesadas, surgiu a necessiade de carregar elemetos de forma independente para dar 
+        mais fluidez na vizualização da página. Na época era como se houvesse várias páginas HTML menores dentro da página HTML maior.<br>
+        Para resolver esse problema foi criada a tag &lt;embed&gt;. <i>Essa tag reproduz um conteúdo específico, interno ou externo, dentro 
+            da sua página HTML.</i><br>
+        A tag &lt;embed&gt; ainda pode ser utilizada mais ela já foi 
+        descotinuada nos dias de hoje. Isso porque o conteúdo a ser carregado por essa tag pode ser qualquer coisa (video, imagem, etc.),
+        ela não especifíca o conteúdo semanticamete. Hoje em dia temos robos de IA que lêem nossos sites e precisam dos elementos
+        semânticos para a interpretação do conteúdo do site.<br>
+        Ex de utilização embed:
+    </p>
+
+    <embed src="Inovação.png" width="250" height="120"> 
+
+    <p>Hoje em dia temos tags específicas para esse tipo de conteúdo. Por exemplo as tags &lt;img&gt; e &lt;video&gt;. </p>
+
+    <h3>Tag &lt;iframe&gt;</h3>
+
+    <p> A tag &lt;iframe&gt; é amplamente utilizada nos dias de hoje. Ela permite executar sites externos inteiros visualmente na sua
+        página HTML, mas na verdade ele está executando um código HTML separado (proveniente da origem do conteúdo sendo executado) e de
+        forma indepedente. Esse recurso é utilizado, por exemplo, para rodar um vídeo do youtube na sua página (mas o "click conta nas 
+        duas fontes então aumenta o número de views do seu vídeo"), mostrar um mapa inteiro do maps, etc.<br>
+        <b>OBS: A tag &lt;iframe&gt; pode trazer problemas de <u>segurança</u> para o seu site! </b><br>
+        Antes de utilizá-la para qualquer contexto, estude sobre a segurança de iframe com javascript.<br>
+        <br>
+        Para utilizar o iframe, é possível gerar o código direto pelo objeto na fonte e implementar no seu código. Os recursos utilizados
+        no carregamento desse conteúdo são 100% da fonte do elemento e não "consomem" recursos da sua página.
+    </p>
+
+    <p><format color></format></p>
+
+</body>
+</html>

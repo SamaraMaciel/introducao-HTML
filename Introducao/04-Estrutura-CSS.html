@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trilha CSS</title>
+    <style>
+        /* Aqui estamos utilizando o seletor "h1" para definir a estilização para "todas" as tags h1 que a página tiver. */
+        h1 {
+            background: red;
+            color: white;
+        }
+
+        li li {
+            color:blue;
+        }
+
+
+    </style>
+</head>
+<body>
+    
+    <h1>Estrutura de declaração de CSS</h1>
+
+    <p>Os comandos em CCS possuem  estrutura <b><i style="background-color: aquamarine; color: greenyellow;">Propriedade: valor;</i></b>.<br>
+    </p>
+
+    <h2>Formas de declaração de CSS</h2>
+
+    <p>Há 3 formas de declarar CSS:</p>
+
+    <ol>
+        <li><b>In Line:</b></li>
+            <p style="background-color: aquamarine; color: white;"> Através da tag &lt;style&gt; e inserindo os atributos de CSS, como por 
+                exemplo: background: aquamarie;<br>
+                Essa forma de declaração não é muito utilizada, porque não permite a reutilização de código, mas essa tag possui prioridade sobre 
+                outros estilos. Também é utilizado para testes.</p>
+        <li><b>CSS interno:</b></li>
+            <p>Aqui o código CCS é adicionado dentro da tag &lt;head&gt; da página HTML. Dentro da tag &lt;head&gt; adicionamos outra tag, a 
+               &lt;style&gt;, e colocamos as regras CSS nessa área.<br>
+               <b>OBS:</b> Nessa modalidade de inserção de CSS precisamos utilizar os <i>"seletores"</i> para definir quais itens receberão essa 
+               formatação em CSS.
+            </p>
+        <li><b>CSS externo:</b></li>
+            <p>Nessa modalidade criamos um arquivo separado com extensão ".CSS" com todas as regras CSS que desejamos aplicar. Esse arquivo
+                é referenciado em todas as páginas HTML, que queremos o mesmo padrão de estilos, através da tag &lt;link&gt;.<br>
+                <b>OBS:</b> Vamos chamar essa tag &lt;link&gt; dentro da tag &lt;head&gt; da nossa página HTML.<br>
+                Por convensão, dentro da pasta do projeto da página HTML criamos uma pasta chamada "Assets". Dentro dessa pasta criamos subpastas
+                para inserir CSS externo e arquivos javascript.<br>
+                Exemplo de declaração da tag &lt;link&gt; com o caminho do arquivo .CSS:<br>
+                <span>&lt;link&gt; rel="stylesheet" href="./assets/css/style.css"</span><br>
+                Onde: "rel" é a relação entre o que está sendo referenciado e "href" é o caminho do arquivo externo.<br>
+                <span>Pontos positivos de utilização do CSS externo:</span>
+                <ul>
+                    <li>O carregamento da página fica mais rápido;</li>
+                    <li>É possível reaproveitar o estilo do CSS para várias páginas sem precisar reescrever código.</li>
+                </ul>
+                <span>Pontos negativos de utilização do CSS externo:</span>
+                <ul>
+                    <li>A página pode ficar temparariamente sem estilo, dependendo da qualidade da conecção com a internet, isso devido ao 
+                        carregamento do CSS ser feito de forma indepemdente da estrutrutura HTML da página.
+                    </li>
+                </ul>
+
+            </p>
+    </ol>
+
+    <h2>Depurando o CSS</h2>
+
+    <p>Podemos utilizar o "dev tools" do próprio navegador para depurar.</p>
+
+    <h2>Seletores CSS</h2>
+
+    <p>Para especificar-mos quais elementos da página HTML queremos estilizar com um bloco específico de CSS, utilizamos os <i>seletores</i>.
+        <br>
+        Abaixo seguem os tipos de seletores que temos em CSS:
+
+        <ol>
+            <li>Seletor por tipo:</li>
+                <p>Busca elementos por uma <i>tag</i> HTML específica;<br>
+                    Exemplo: É possível aplicar um CSS apenas para uma tag específica ou para um conjunto de tags "filhas" inseridas dentro de uma 
+                    tag "mãe" (atavés da tag &lt;div&gt; por exemplo).<br>
+                    <ul>
+                        <li>h1 {<br> background: blue;<br>}</li>
+                        <li>div {<br> background: blue;<br>}</li>
+                    </ul>
+                </p>
+            <li>Seletor por ID (#):</li>
+                <p>Busca elementos atrés do atributo "id". Um "id" é atributo de uma tag, ele idetifica essa tag de forma única no arquivo HTML.
+                    Pode receber como valor texto ou número.<br>
+                    <b>OBS:</b>Um ID deve ser único por página!<br>
+                    Exemplo:<br>
+                    <ul>
+                        <li>Código HTML: &lt;p id="texto-boas-vindas"&gt;Bem vindo!&lt;/p&gt;</li>
+                        <li>CSS: <span>#texto-boas-vindas {<br>background: red;<br>}</span></li>
+                    </ul>
+                </p>
+            <li>Seletor por classe (.):</li>
+                <p>Busca elementos através do atributo "class". Uma "class" também é um atributo de uma tag, esse atributo é utilizado para definir 
+                    um conjunto de elementos e, diferente do "id", a mesma classe pode e deve ser atribuída mais de uma vez dentro de um arquivo HTML,
+                    de acordo com a necessidade.<br>
+                    Exemplo:<br>
+                    <ul>
+                        <li>Código HTML: &lt;li class="seletores-mais-comuns texto-maisculo"&gt;Seletor por classe.&lt;/li&gt;<br>
+                            <b>OBS:</b>Foram inseridas duas classes nesse elemento. </li>
+                        <li>CSS: <br><span>.seletores-mais-comuns{<br>color: red;<br>}<br>
+                            .texto-maiusculo {<br>text-transform: uppercase;<br>}
+                        </span></li>
+                    </ul>
+
+                </p>
+            <li>Seletor Universal (*):</li>
+                <p>Seleciona todos os elementos HTML, independente de qualquer atributo desses elementos. É util para definir características
+                    padrão, como por exemplo o tipo de fonte da página, e para aplicar reset CSS.<br>
+                    Exemplo:<br>
+                    <ul>
+                        <li>CSS: <span>* {<br>font-weight: bold;<br>}</span></li>
+                    </ul>
+                </p>
+            <li>Seletor de atributo ([atrib])</li>
+                <p>Seleciona elementos que possuem um atributo específico no arquivo HTML. É possível também procurar atributos com valor 
+                    específico<br>
+                    Exemplo:<br>
+                    <ul>
+                        <li>Código HTML: &lt;li&gt; &lt;a title="Google" href="https://www.google.com"&gt;Google&lt;/a&gt;&lt;/li&gt; </li>
+                        <li>CSS: <br><span>[title] {<br>color: red;<br>}</span></li>
+                        <li>CSS para estilizar atributo com valor específico: <br><span>[title="Google"] {<br>color: red;<br>}</span><br>
+                            OBS: Com essa estrutura o valor do atributo precisa ser <b>exato!</b>
+                        </li>
+                        <li>CSS para estilizar atributo buscando valor aproximado:</li>
+                            <ul>
+                                <li>HTML: &lt;li&gt; &lt;a title="site do Google" href="https://www.google.com"&gt;Google&lt;/a&gt;&lt;/li&gt;</li>
+                                <li>CSS: <br> 
+                                    <span>[title~="Google"] {<br>color: red;<br>}</span><br>
+                                    OBS: Com essa estrutura "~=", eu busco o valor aproximado <b>não importando a ordem que ele apareça no nome.</b>
+                                </li>
+                            </ul>
+                        <li>CSS para estilizar atributo com valor imediatamente seguido de "hífem":</li>
+                            <ul>
+                                <li>HTML: &lt;li&gt; &lt;a title="site-do-Google" href="https://www.google.com"&gt;Google&lt;/a&gt;&lt;/li&gt;</li>
+                                <li>CSS: <br>
+                                    <span>[title|="site"] {<br>color: red;<br>}</span><br>
+                                    OBS: Com essa estrutura "|=" eu busco o atributo que tem o valor que <b>começa com "site" imediatamente 
+                                        seguido de "-" (hífem).</b> Caso o texto procurado não esteja no início do nome do atributo, ou não possua
+                                        hífem logo após, a busca não irá funcionar.
+                                </li>
+                            </ul>
+                        <li>CSS para estilizar atributo buscando o valor por prefixo:</li>
+                            <ul>
+                                <li>HTML: &lt;li&gt; &lt;a title="site-seguro" href="https://www.google.com"&gt;Google&lt;/a&gt;&lt;/li&gt;<br>
+                                    &lt;li&gt; &lt;a title="site-nao-seguro" href="http://www.google.com"&gt;Google&lt;/a&gt;&lt;/li&gt;
+                                </li>
+                                <li>CSS: <br>
+                                    <span>[href^="https://"] {<br>color: red;<br>}</span><br>
+                                    OBS: Procura todo atributo "href" cujo valor começa especificamente com "https://".
+                                </li>
+                            </ul>
+                        <li>CSS para estilizar atributo buscando o valor por sufixo:</li>
+                            <ul>
+                                <li>HTML: &lt;li&gt; &lt;a title="site-seguro" href="https://www.google.com"&gt;Google&lt;/a&gt;&lt;/li&gt;<br>
+                                    &lt;li&gt; &lt;a title="site-nao-seguro" href="http://www.google.com"&gt;Google&lt;/a&gt;&lt;/li&gt;
+                                </li>
+                                <li>CSS: <br>
+                                    <span>[href$=".com"] {<br>color: red;<br>}</span><br>
+                                    OBS: Procura todo atributo "href" cujo valor termina especificamente com ".com".
+                                </li>
+                            </ul>
+                        <li>CSS para estilizar atributo buscando o valor do atributo com uma palavra(caracter) <b>em qualquer posição</b> 
+                            dentro do valor:
+                        </li>
+                            <ul>
+                                <li>HTML: &lt;li&gt; &lt;a title="site-seguro" href="https://www.google.com"&gt;Google&lt;/a&gt;&lt;/li&gt;<br>
+                                    &lt;li&gt; &lt;a title="site-nao-seguro" href="http://www.google.com"&gt;Google&lt;/a&gt;&lt;/li&gt;
+                                </li>
+                                <li>CSS: <br>
+                                    <span>[title*="seg"] {<br>color: red;<br>}</span><br>
+                                    OBS: Procura todo atributo "href" que contenha "seg" dentro do valor.
+                                </li>
+                            </ul>
+                    </ul>
+                </p>
+        </ol>
+
+    </p>
+
+    <h2>Agrupando seletores</h2>
+
+    <p>É possível agrupar diferentes tipos de seletores para apliar as mesmas regras CSS, para esse agrupamentos separamos os seletores 
+        por vírgula (,).
+        <br>
+        Ex1: .texto, h1, #link-referencia {<br>color: red;<br>}
+        <br>
+        <b>OBS: </b>Essa vírgula funciona como um texto lógico (ou/or).
+        <br><br>
+        EX2: .texto.teste 
+        <br>
+        EX3: p.teste 
+        <br>
+        <b>OBS: </b>Nos exmplos 2 e 3 estamos aplicando o teste lógico (e/and). Aqui utilizamos a combinação de seletores sem espaços.
+
+    </p>
+
+    <h2>Combinadores</h2>
+
+    <p>Combinadores definem qual é o tipo de selação entre dois seletores.
+        <ul >
+            <li class="testeComb">Combinador descendente (espaço)
+                <ul>
+                    <li>Ex: li li { color: blue; }</li>
+                    <li>Estrutira de código para esse combinador descendente:<br>
+                    &lt;li&gt; "texto do item da lista"<br>
+                    &lt;ul&gt;<br>
+                    &lt;li&gt; "Texto do subitem da lista"<br>
+                    &lt;/li&gt;<br>
+                    &lt;/ul&gt; <br>
+                    &lt;/li&gt;
+
+                    </li>
+                </ul>
+            </li>
+            <li>Combinador filho (>)
+                <ul>
+                    <li>Indica que o segundo seletor da combinação é filho imediato do seletor da esquerda.</li>
+                    <li>Ex: div > p <br>
+                    OBS: Se houver uma tag "p" dentro de uma segunda tag inserida em div (span, por exemplo), essa tag "p" está dentro de div,
+                    mas é neta de div e não filha.
+                    </li>
+                </ul>
+            </li>
+            <li>Combinador Adjacente (+)
+                <ul>
+                    <li>Indica o seletor irmão imediato do seletor à esquerda.</li>
+                    <li>EX: Em uma estrutura -> &lt;div&gt; ... &lt;/div&gt;<br>
+                        &lt;p&gt; ... &lt;/p&gt;<br>
+                        a tag "p" indicada acima é irmã da tag "div".</li>
+                    <li> Estrutura: div + p {...}</li>
+                </ul>
+            </li>
+            <li>Combinador irmão em geral (~)
+                <ul>
+                    <li>Indica todos os seletores irmãos do seletor à esquerda (tags de mesma identação).</li>
+                    <li>Estrutura: div ~ p {...}</li>
+                </ul>
+            </li>
+        </ul>
+
+        <p><b>OBS: </b>É possível fazer a combinador de todos os seletores e combinadores apresenados.</p>
+    </p>
+
+    
+</body>
+</html>

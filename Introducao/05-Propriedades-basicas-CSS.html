@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Propriedades CSS</title>
+</head>
+<body>
+
+    <h1>Propriedades básicas do CSS</h1>
+
+    <h2>Atributos de estilização e exemplos de valores de declaração:</h2>
+
+    <div>
+        <ul>
+            <li>
+                Largura: width
+                <p>Valores:</p>
+                <ul>
+                    <li>auto -> valor padrão</li>
+                    <li>definixão em píxel (px) -> Ex: 200px</li>
+                    <li>inherit -> "copia" a largura definida para o bloco de estilo anterior.</li>
+                    <li>definição em porcentagem -> 50%</li>
+                    <li>definição em centímetros -> 100cm</li>
+                    <li>etc....</li>
+                </ul>
+            </li>
+            <br>
+            <li>
+                Altura: height
+                <p>Basicamente podemos utlizar os mesmos tipos de declaração de valores que usamos no width.</p>
+            </li>
+            <li>
+                Largura e altura máxima
+                <p>Podem ser utilizados para responsividade do página.</p>
+                <ul>
+                    <li>min-width</li>
+                    <li>max-width</li>
+                    <li>min-height</li>
+                    <li>max-height</li>
+                </ul>
+            </li>
+            <br>
+            <li>
+                Margem: margin
+                <p>Cria um espaçamento em volta dos elementos. O valor é aplicado dos 4 lados do elemento.</p>
+                <ul>
+                    <li>Um valor: aplica esse valor dos quatro lados do elemento.</li>
+                    <li>Dois valores (separados por espaço): aplica os valores em cima e em baixo do elemento 
+                        respectivamente.</li>
+                    <li>Três valores (separados por espaço): aplica em cima, lados e em baixo do elemento 
+                        respectivamente.</li>
+                    <li>Quatro valores (separados por espaço): aplica em cima, direita, em baixo, esquerda do 
+                        elemento respectivamente.</li>
+                    <li>OBS1: Segue o sentido horário.</li>
+                    <li>OBS2: margin: auto; centraliza o elemento apenas na horizontal.</li>
+                    <li>OBS3: É possível utilizar valores negativos para margem.</li>
+                </ul>
+                <p>Variações:</p>
+                <ul>
+                    <li>margin-top</li>
+                    <li>margin-botton</li>
+                    <li>margin-left</li>
+                    <li>margin-right</li>
+                </ul>
+            </li>
+            
+            <li>
+                <p>Padding: É um espaçamento interno do elemento, enquanto que a margem é um espaçamento externo do 
+                    elemento. É bem útil para criarmos cards, por exemplo.<br>
+                    Utiliza os mesmos tipos de propriedade que o margin.
+                </p>
+            </li>
+            <li>
+                <p>Box-sizing: Ao aumentar o padding, o tamanho do elemento pode aumentar junto, isso porque 
+                    o atributo width é calculado como: largura + borda + padding. Para fazer com que o elemento 
+                    respeite o limite estipulado para width e height, definimos o atributo "box-sizing".<br>
+                    Esse atributo pode receber dois valores:
+                    <ul>
+                        <li>context-box: se compora de forma padrão, soma os valores de largura + borda + padding.</li>
+                        <li>border-box: Redimenciona a largura e a altura do elemento para respeitar o width e height
+                            pre definidos.</li>
+                    </ul>
+                </p>
+            </li>
+        </ul>
+    </div>
+ 
+
+    
+</body>
+</html>

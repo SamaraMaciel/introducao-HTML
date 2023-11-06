@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal de notícias galáticas</title>
+
+    <!-- Nesta página vamos construir um exemplo simples de uma chamada de artigo que pode ser de um blog,
+        onde o usuário visualiza a chamada da matéria numa estrutura de retângulo com as informações de título e autor,
+        por exemplo. Em uma página real e blog teríamos vários "retângulos" como esse cada um represemtando uma matéria 
+        diferente.
+        Essa estrutura pode ser chamada de "coteiner" e pode ser criada para ser reaplicada várias vezes, sem que seja
+        necessário reescrever todo o código. Esse é o princípio de utoilização de frameworks como o Angular.
+        Entendendo o conceito de como os elementos são utilizados, podemos compreender melhor como funcionam esses
+        frameworks e nos adaptarmos melhor a sua utilização.
+    -->
+
+    <link rel="stylesheet" href="./Styles/card.css">
+    <script src="./src/Components/CardNews.js" defer></script>
+    <script src="./src/Components/TituloDinamico.js" defer></script>
+    <script src="./src/Components/TituloDinamico2.js" defer></script>
+    <!--Nao esqueça de colocar o "defer", se vc não colocar é possível que seu elemento
+        não seja renderizado, pois vai ser executado em uma ordem aleatória.-->
+    <script src="./src/Components/CardNewsMelhor.js" defer></script>
+
+</head>
+<body>
+
+    <!-- Nesse projeto jamos criar components 100% na mão, sem utilizar frameworks,
+        assim, quando começarmos a utilizar frameworks como angular, react, vamos
+        estar familiarizados com o que de fato acontece por debaixo dos panos.
+        Professor DIO: Felipe Aguiar.
+     -->
+
+    <div class="container">
+
+        <div class="card">
+            <div class="card__left">
+                <span>By Samara Maciel</span>
+                <a href="#">Darth Vader Contrata Devs</a>
+                <p>Darth Vader procura desenvolvedores que saibam trabalhar com componentes.</p>
+            </div>
+            <div class="card_right">
+                <img src="./Assets/darth_vader.jpg">
+            </div>
+
+        </div>
+    </div>
+
+    <div class="app-root">
+
+    <card-news></card-news> <!--Parabéns voce criou seu primeiro "component"-->
+    <titulo-dinamico></titulo-dinamico>
+    <titulo-noticia titulo="Nova Notícia"></titulo-noticia>
+    <titulo-noticia titulo="Novo texto"></titulo-noticia>
+    <card-news-melhor
+        autor="Samara"
+        title="Darth Vader Contrata"
+        link-url="www.google.com"
+        photo="./Assets/darth_vader.jpg"
+        content="Darth Vader procura desenvolvedores que saibam trabalhar com componentes."
+    ></card-news-melhor>
+
+</div>
+
+    <!-- Como vimos na aula, o programador cria o código HTML, mais o browser interpreta o D.O.M.
+    Document oriented model, que é um modelo de árvore. Porém, nós programadores podemos modificar essa árvore
+    para nos atender, é possível criar um "componente", que é um elemento html(um nó dessa árvore) com vários
+    elementos dentro. A isso damos o nome de shadow D.O.M. A essa shadow D.O.M. damos o nome de componentes.
+    OBS: é possível alterar essa árvore, com javascrip, porém a medida que o código aumenta fica muito complexo e 
+    pouco prático.
+    OBS: Ainda existe o Visrtual Shadow D.O.M. Pesquisar mais sobre.
+    Site de pesquisas: https://caniuse.com/
+    -->
+
+    <!-- Todo componente (Component) é na verdade uma funçao javascript que retorna mais javascript, HTML e CSS.
+        OBS: Um component pode ser formado por elements + style + prop (parte dinamica), ecapsulados.
+    -->
+
+    <!-- github da trilha:
+    https://github.com/felipeAguiarCode/angular-playground/tree/main/C1%20-%20Web%20Components
+     -->
+    
+</body>
+</html>

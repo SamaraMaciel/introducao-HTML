@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu primeiro formulário</title>
+</head>
+<body>
+
+    <h1>Meu primeiro formulário</h1>
+
+    <!-- Formulários
+        o método "method" indica o meio pelo qual o formulário vai ser enviado, ele possui dois valores possíveis, o "GET" e o "POST"
+        GET - Envia através da url, e nós não queremos isso, pois os dados ficam visíveis e perde a segurança
+        POST - Encapsula a informaçõ e envia, é bem mais seguro
+        O método autocomplete pode receber os valores "on" e "off", ele é utilizado para bloquear a função autocompletar padrão nos 
+        navegadores. Dessa forma, dados sensíveis, como senhas, nao ficam armazenados.
+
+        OBS: todos os atributos que começam com "on", no HTML, significam eventos, e são normalmente utilizados junto com javascript.
+    -->
+
+    <form name="signup" onsubmit="alert('Enviei o formulário');" autocomplete="off" target="_blank" method="post" action="endereço do servidor">
+        Nome: <input type="text" name="name"/><br>
+        Idade: <input type="number" name="age"/><br>
+        Senha: <input type="password" name="password"/><br>
+        <button type="submit">Enviar</button>
+    </form>
+
+    <h3>Tag input</h3>
+
+    <label>Text</label><input type="text"/>
+    <label>Number</label><input type="number" min="0" step="5" max="100"/><br>
+    <label>Range</label><input type="range" min="0" max="100" value="90"/><br>
+    <!-- Há outros tipos de input, o próprio VSCode mostra a lista. Uma observação é tomar cuidado com atribuitos muito específicos
+        ALguns podem não funcionar em alguns navegadores, como por exemplo os atributos "week" e "month" do type.
+    -->
+    <label>File</label><input type="file" multiple/><br>
+    <!-- O tipo file por padrão permite selecionar e carregar um arquivo do computador, o atributo "multiple" permite que se faça a 
+        seleção de mais de um arquivo
+    -->
+
+    <!-- Particularidades do atributo type dos tipos "checkbox" e radio:
+         O tipo checkbox aceita a seleção de mais de uma opção, nele é necessário definir o atributo "name", que vai ser o mesmo nome 
+         para cada item que compõe a lista do checkbox, porém o name deve ser atribuído como: EX: name="opicional[]", esse colchetes 
+         no final do nome atribuído ao campo é importante para informar durante o envio que o que está sendo enviado é uma lista de valores
+         e não apenas um único valor. Se o colchetes não for inserido e houver mais de uma opção marcada com o checkbox, o lado do servidor
+         que vai receber e processar essa informação (backend) vai entender que os valores fora sobrepostos e vai processar o armazenamento
+         apenas do último item da lista. Com o colchetes o servidor vai processar todos valores marcados, como uma lista.
+         Para o atributo do tipo "radio" também é necessário que o atributo "name" seja preenchido com o mesmo nome para todas as opções,
+         pois dessa forma o HTML vai recohecer as opções do "radio", que permite que apenas um item da lista seja selecionado (ou um ou
+         outro).
+        OBS: no "checkbox" também existe o atributo "disable" que mostra uma opção mas não permite que ela seja selecionada, indicando que
+        um item pode estar temporariamente indisponível.
+    -->
+
+    <!-- Tag <select></selection> -> abre uma lista suspensa para selação. Essa tag possui a tag filha <option></option> -->
+
+    <select name="role">
+        <option value="">Selecione o cargo</option>
+        <option selected value="Presidenter">Presidente</option>
+        <option value="Diretor">Diretor</option>
+        <option value="Gerente">Gerente</option>
+
+    </select>
+
+</body>
+</html>
