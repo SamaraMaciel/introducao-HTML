@@ -1,4 +1,4 @@
-# introducao-HTML
+# Introducao ao HTML
 
 Este repositório é destinado a uma aplicaçao introdutória ao HTML5.
 O objetivo é utilizar este repositório como área de treinamento voltado ao aprendizado e assimilação da criação de páginas HTML envolvendo CSS e JavaScript.
