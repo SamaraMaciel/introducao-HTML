@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/styles/imagem.css">
+    <title>Estilização básica</title>
+    <style>
+        .conteiner{
+            width: 200px;
+            height: 300px;
+            border: 5px solid blue;
+        }
+
+        /*.conteiner, img{
+            width: 100%;
+            height: 100%;
+        }*/
+
+        img{
+            width: 100%;
+            height: 100%;
+        }
+
+        #container {
+            object-fit: contain;
+        }
+    </style>
+</head>
+<body>
+    <h1>Estilização básica HTML</h1>
+    <div class="general-content" id="section-colors">
+        <h2>Definição de cores</h2>
+        <span>
+            <p>Há várias formas de definição de cores em uma página HTML. Podemos definir uma cor através de cores padrão de navegadores
+                específicos, nesse caso "chamamos" a cor por nome pré-definido (Em todo navegador há cerca de 140 cores pré-definidas). Porém,
+                também podemos definir cores através de:
+                <ul>
+                    <li>Cores pré-definidas</li>
+                    <li>Palavra reservada "currentcolor"(para inserir um novo item com a cor que já foi definida dentro do bloco)</li>
+                    <li>RGB</li>
+                    <li> RGBA</li>
+                    <li>Hexadecimal</li>
+                    <li>Hexadecimal com transparência</li>
+                    <li>HSL</li>
+                    <li>HSLA</li>
+                    <li>Inserir grau de transparência com a palavra reservada "transparent"</li>
+                </ul>
+            </p>
+        </span>
+
+        <h2>Padrão RGB:</h2>
+        <span>
+            <p>No padrao RGB(Red, Green e Blue), utilizamos números de 0 a 255 para definir e mesclar tons de vermelho, verde e azul.
+            OBS: 0 corresponde ao preto, e 255 corresponde a cor máxima de cada item RGB. Também é possível
+            definir cada parceça de cor por prtcentagem, embora não seja usual.</p>
+            <p1>Ex: color: rgb(0, 255, 0);</p1><br>
+            <p2>Ex: color: rgb(100%, 50%, 70%);</p2>
+        </span>
+        <h2>Padrão RGBA:</h2>
+        <span>
+            <p>É possível atribuir grau de transparência utilizando o padrão RGBA, onde o A indica grau alpha.
+                O grau alpha pode definido entre 0.0 e 1.0, podendo também ser definido no formato: (.0 até 1).        </p>
+        </span>
+        <h2>Padrão Hexadecimal:</h2>
+        <span>
+            <p>Por padrão é precedido pelo símbolo # seguido de 6 números alfanuméricos(0 a 9 e a A até F), onde os 
+                dois primeiros números representam a parcela de vermelho, os dois números do meio represantam a 
+                parcela de verde, e os dois últimos números representam a parcela de azul.
+            </p>
+            <p>EX: color: #000000; (Representa a cor preta)</p>
+            <p>EX: color: #FFFFFF; (Representa a cor branca)</p>
+            <p>OBS: Quando os seis caraceres são iguais também é possível definir a mesma cor de forma "reduzida"
+                representando apenas as três primeiras letras. EX: #FFF; (representa a cor branca).
+            </p>
+            <p>Para adicionar transparência utilizando o padrão hexadecimal é só acrescentar mais dois dígitos
+                ao final do padrão, com valores entre 00 e FF.
+            </p>
+        </span>
+        <h2>Padrão HSL:</h2>
+        <span>
+            <p>HSL(hue, saturation, lightness) - (matiz, saturaçao, luminosidade).</p>
+            <ul>
+                <li><b>Hue (Matiz): </b>é o grau na roda de cores (de 0 a 360 graus).</li>
+                    <ul>
+                        <li>0 ou 360 é vermelho</li>
+                        <li>120 é verde</li>
+                        <li>240 é azul</li>
+                    </ul>
+                <li><b>Saturation (saturação): </b>valor percentual.</li>
+                    <ul>
+                        <li>0% é um tom de cinza</li>
+                        <li>100% é a cor total</li>
+                    </ul>
+                <li><b>Lightness (luminisidade): </b>luminosidade da cor.</li>
+                    <ul>
+                        <li>0% é preto</li>
+                        <li>100% é branco</li>
+                    </ul>
+            </ul>
+            <p>Ex: color: hsl(270, 100%, 50%);</p>
+        </span>
+        <div class="imagem">
+            <img id="img1" src="./assets/roda-de-cores-HSL.png">
+        </div>
+        <h2>Padrão HSLA:</h2>
+        <span>
+            <p>Assim como no padrçao RGB, no padrão HSL também há a possibilidade de adição do elemento alpha de 
+                transparência da cor. Para isso utilizamo a componente alpha (A) que varia de 0 a 1.0, onde 0
+                significa nenhuma transparência e 1.0 100% de transparência.
+                Profissionais que trabalham com edição de imagens estão mais familiarizados com o padrão HSL.<br>
+                O mais comum na maioria dos projetos padrão de intenet são o hexadecimal e o RGBA.
+            </p>
+        </span>
+    </div>
+    <div class="general-content" id="'section-images">
+        <h2>Propriedade <b>object-fit: </b> (CSS)</h2>
+        <span>
+            <p>
+                A propriedade "object-fit" do CSS é utilizada para definir o comportamento visual de imagens e 
+                vídeos dentro de um elemento/componente (conteiner).
+            </p>
+        </span>
+        <code>object-fit: fill;</code> padrão
+        <div class="conteiner">
+            <img src="./Inovação.png">
+        </div>
+        <span>
+            <p>Modelo do código por trás da imagem de exemplo:</p>
+            <code>
+                &lt;style&gt; <br>
+                    .conteiner{ <br> 
+                        width: 200px; <br>
+                        height: 300px; <br>
+                        border: 5px solid blue; <br>
+                    } <br>
+                    <br>
+                    /*.conteiner, img{ <br>
+                        width: 100%; <br>
+                        height: 100%; <br>
+                    }*/ <br>
+                    <br>
+                    img{ <br>
+                        width: 100%; <br>
+                        height: 100%; <br>
+                    } <br>
+                    <br>
+                    #container { <br>
+                        object-fit: contain; <br>
+                    } <br>
+                &lt;/style&gt; <br><br>
+                &lt;div class="conteiner"&gt; <br>
+                    &lt;img src="./Inovação.png"&gt; <br>
+                &lt;/div&gt;
+            </code>
+            <p>OBS: a propriedade <code>object-fit</code> do exemplo acima está recebendo o valor
+                <ul>
+                    <li><code>contain</code> (que é um atributo que define que a imagem manterá suas dimensoes, mas 
+                de forma que não distorça a imagem) mas também é possível utilizar outros valores de atributo como:</li>
+                    <li><code>fill</code> (que irá parametrizar a imagem para um tamanho prédeterminado pelo dev, e tentará 
+                        preencher todo o espaço do conteiner, o que provavelmente irá distorcer a imagem.)</li>
+                    <li><code>cover</code> (que redimensiona a imagem para preencher todo o espaço do conteiner, porém ele "corta"
+                    as partes da imagem que ficariam para fora do conteiner, dessa a imagem não fica distorcida.)</li>
+                    <li><code>none</code> (esse atributo faz com que a propriedade ignore as dimensões do elemento pai
+                    e utile a imagem no seu tamanho original, cortando as "bordas" que ficariam para fora do conteiner, se 
+                    o tamanho do conteiner for menor do que o tamanho original da imagem.)</li>
+                    <li><code>scale-down</code> (nessa configuração, o esse atributo verifica qual é a menor imagem trazida
+                    comparando as características da imagem que seriam retornadas utilizando o <code>contain</code> ou o 
+                    <code> none</code>, das duas, a configuração que ficar menor será a configuração que o <code>scale-down</code> irá retornar.)</li>
+                </ul> 
+            </p>
+        </span>
+    </div>
+
+    <div>
+        <h2>Propriedade <code>object-position</code>:</h2>
+        <p>A propriedade <code>object-position</code> deve ser utilizada junto com a propriedade 
+        <code> object-fit</code>, ela é utilizada para definir a posiçao da imagem dentro do conteiner.
+        Com a <code>object-position</code> podemos definir se a imagam firá mais a esquerda, a direita, recuada, etc
+        dentro do conteiner. Valores:
+        <ul>
+            <li>porcentagem;</li>
+            <li>pixel;</li>
+            <li>palavras reservadas + valor: right, center, left, bottom, right up, right bottom, start, end, etc.</li>
+        </ul>
+        OBS: É possivel misturar porcentagem, pixel e palavras reservadas + valor na definição da propriedade.
+        </p>
+    </div>
+
+    <div>
+        <h2>Alterando o fundo dos elementos e trabalhando com estilizaçao de background:</h2>
+        <span>
+            <p>Existem várias formas para se trabalhar com fundos de imagem/elementos em uma página HTML utilizando CSS, a propriedade
+                <code>backgound-color</code> é apeas uma delas. <b>Para mais detalhes e aprofundamento pesquisar na documentação.</b>
+            </p>
+            <p>
+                <ul>
+                    <li><code>backgorund-image: url('../diretório');</code> *ou url do servidor onde a imagem se encontra.</li>
+                    <li><code>back-ground-color: palevioletred;</code></li>
+                    <li><code>background-image: radial-gradient(lightpink, paleviolet, purple);</code> *Cria um efeito gradiente radial com as cores definidas.</li>
+                    <li><code>background-image: repeating-gradient(lightpink, paleviolet, purple);</code> *Cria um efeito de lista de cores que repete (listrado).</li>
+                    <li><code>backgorund-image: url('../diretório'), url('../diretorio');</code> *é possível combinar imagens dessa forma, 
+                        lembrando ue a sequencia inserida das imagsn define também a camada que a imagem vai ficar, a primeira imagem vai 
+                        ficar na camada superior, a segunda na camada inferior a primeira e assim sucetivamente.</li>
+                    <li><b>OBS:</b> pode ser trabalhado com várias extençoes de imagem, jpeg, png, gif, etc.</li>
+                </ul>
+            </p>
+            <p>
+                Site com modelos de padrões de imagem e seus códigos para reprodução: <a href='https://projects.verou.me/css3patterns/'>https://projects.verou.me/css3patterns/</a>
+            </p>
+            <h4>É possível alterar o tamanho de imagens de fundo com a propriedade <code>background-size</code>:</h4>
+            <ul>
+                <li><code>background-size: auto;</code> *Define um tamaho de forma automática para a imagem.</li>
+                <li><code>background-size: cover;</code> *Reajusta a imgagem para cobrir todo o conteiner, mas cuidado
+                    se a imagem for muito garnde pode cortar um pedaço e se for muito peuena pode expandir muito perdendo a qualidade.
+                </li>
+                <li><code>background-size: contain;</code> *Redimensiona a imagem para caber inteira dentro do elemento, caso sobre espaço no elemento a imagem 
+                    irá começar a se repetir por padrão. Vamos ver posteriormente uma propriedade para evitar esse comportamento de repetição.
+                </li>
+                <li><code>background-size: 50% 200px;</code> *É possivel utilizar valores para definr o dimensionamento da imagem com essa propriedade.
+                    Se for passado apenas um valor, será intendido como parâmetro de largura somente.
+                </li>
+                <li><code>background-size: 200px 50%, cover;</code> *Nesse exemplo estamos trabalhando com camadas de imagens(duas ou mais imagens em camada).
+                    Nesse caso, passamos mais de um caminho de imagem com a propriedade <code>backgorund-image</code> e definimos as configurações de cada imagem
+                    separamente dentro do mesmo comando <code>background-size</code> separando por vírgula.</li>
+            </ul>
+            <h4>Configurando a repetição de imagem com o a propriedade <code>background-repeat</code>:</h4>
+            <ul>
+                <li><code>background-repeat: repeat;</code> *Funciona como padrão, repete a imagem de forma a preencher todo o container.</li>
+                <li><code>background-repeat: repeat-x;</code> *Repete a imagem apenas na horizontal. Caso "sobre" espaço na parte de baixo do conteiner, vai ficar em branco.</li>
+                <li><code>background-repeat: repeat-y;</code> *Tem a maesma função do item anterior, porém aqui a imagem só se repete no eixo y (vertical).</li>
+                <li><code>background-repeat: space;</code> *Repete a imagem tanto horizontalmente quanto verticalmente se cortar a imagem, essa propriedade cria um espaço em branco 
+                    tanto na vertical quanto na horizontal entre as imagens no conteiner sem cortes na imagem.
+                </li>
+                <li><code>background-repeat: round;</code> *Redimensiona a imagem para ue ela repita de forma a ocupar todo o espaço do conteiner, sem espaço entre as imagens e sem cortar 
+                    nenhum pedaço da imagem.
+                </li>
+                <li><code>background-repeat: no-repeat;</code> *Não repete a imagem, mesmo se ele ficar bem pequena dentro do conteiner.</li>
+                <li><code>background-repeat: round sapce;</code> *É possível combinar os valores, separando-os por espaço, para definir a repetição nos eixos separadamente.</li>
+            </ul>
+            <h4>Ajustando a posição da imagem de fundo com <code>background-position</code></h4>
+            <ul>
+                <li><code>background-position: center 80%;</code> *Basicamente se define posição nos eixos x e y através de valor ou palavras reservadas de posição.
+                    Para configuração de múltiplas imagens é só separar a camada por vírgula. Outro exemplo de configuração: <code>background-position: bottom 20px right 10px;</code>.
+                    <br>OBS: Também é possível trabalhar a posição com gradientes.
+                </li>
+            </ul>
+            <h4>Propriedade <code>background-attachment</code></h4>
+            <p>Essa propriedade define o "movimento" da imagem dentro da área de trabalho, útil principalmente ao utilizar barras de rolagem.<br>
+                Pesquisar mais sobre efeitos de paralax e outros efeitos com imagem.
+            </p>
+            <ul>
+                <li><code>background-attachment: fixed;</code> *A imagem fica com a posiçao fixa na página, mesmo utilizando a rolagem da página.
+                    Aqui prduz um efeito interessante utilizando uma barra de rolagem dentro de um conteiner e outra barra de rolagem para a página em si, 
+                    dá o efeito de a imagem estar "subindo com a barra de rolagem da página e com a barra de rolagem do conteiner se visualiza a rolagem apenas do texto.
+                </li>
+                <li><code>background-attachment: scroll;</code> *Com relação ao texto e a imagem dentro de um cointeiner, aplica o mesmo efeito, porém, com a barra de rolagem da página 
+                    a imagem fica fixa, ou seja, rola junto com a barra de rolagem.
+                </li>
+                <li><code>background-attachment: local;</code> *A imagem rola junto com o conteúdo em texto inserido no conteiner ao aplicar uma barra de rolagem para esse conteiner.
+                    Ao utilizar a barra de rolagem da página a imagem fica fixa.
+                </li>
+            </ul>
+            <h4>Propriedade <code>background-origin</code></h4>
+            <p>Com essa propriedade podemos definir o enquadramento da imagem com relação ao padding interno ao conteiner e a borda.</p>
+            <ul>
+                <li><code>background-origin: padding-box;</code> *A imagem fica enquadrada dentro do conteiner mas sem ultrapassar a linha interna da borda.</li>
+                <li><code>background-origin: border-box;</code> *A imagem fica enquadara dentro do conteiner entrando na totalidade da faixa da borda.</li>
+                <li><code>background-origin: content-box;</code> *A imagem fica enquadara no centro do conteiner, sem avaçar pelo padding do conteiner ou pela faixa da borda definida.</li>
+            </ul>
+            <h4>Propriedade <code>background-clip</code></h4>
+            <p>Com essa propriedade podemos definir a área de cobertura não de imagens dentro de um conteiner, mas também a área de cobertura de uma cor da fundo aplicada.</p>
+            <ul>
+                <li><code>background-clip: padding-box;</code> *A imagem ou a cor de fundo cobrem todo i espaçamento interno do conteiner icluindo o padding, se houver, mas não conre a área da borda se esta for definida.</li>
+                <li><code>background-clip: border-box;</code> *A imagem ou a cor de fundo preencher todo o espaçamento interno do conteiner, inclusive a área da borda, se houver.</li>
+                <li><code>background-clip: content-box;</code> *Preenche apenas a área interna do conteiner, área após a borda e o padding.</li>
+                <li><code>background-clip: text;</code> *Aplica o efeito da cor ou da imagem dentro das letras do texto.<br>
+                    OBS: para esse efito funcionar no Chrome, é necessário escrever o código como: <code>-webkit-background-clip: text;</code></li>
+            </ul>
+            <h4>Propriedade <code>background-blend-mode</code></h4>
+            <p>Com essa propriedade é possível mesclar imagens e cores, utilizando mais de uma camada também, para criar efeitos diferentes. Pode gerar um efeito bem bacana no visual.
+                Essa prpiedade possui vários valores de atributos recebíveis, ineressante pesquisar mais sobre.
+            </p>
+            <ul>
+                <li><code>background-blend-mode: normal;</code></li>
+                <li><code>background-blend-mode: multiply;</code></li>
+                <li><code>background-blend-mode: screen;</code></li>
+                <li><code>background-blend-mode: overlay;</code></li>
+                <li><code>background-blend-mode: darken;</code></li>
+                <li><code>background-blend-mode: lighten;</code></li>
+                <li><code>background-blend-mode: color-dodge;</code></li>
+                <li><code>background-blend-mode: color-burn;</code></li>
+                <li><code>background-blend-mode: hard-light;</code></li>
+                <li><code>background-blend-mode: soft-light;</code></li>
+                <li><code>background-blend-mode: difference;</code></li>
+                <li><code>background-blend-mode: exclusion;</code></li>
+                <li><code>background-blend-mode: hue;</code></li>
+                <li><code>background-blend-mode: saturation;</code></li>
+                <li><code>background-blend-mode: color;</code></li>
+                <li><code>background-blend-mode: luminosity;</code></li>
+            </ul>
+            <p>site que pode ser utilizado para ter uma prévia do funcionamento desses modos: <a href="https://codepen.io/team/css-tricks/pen/GgavOP">CodePen</a>. 
+                É um site onde você pode inserir o código e ter uma prévia*.
+            </p>
+            <h4>Propriedade <code>background</code></h4>
+            <p>É possível definir quase todas as propriedades de fundo anteriores só utilizando o background-color.
+                Inserindo os atributos das propriedades anteriores separados por espaço. Para criar camadas é só adicionar os atributos entre vírgula. OBS: proprieades de fundo adicionadas após o <code>background</code>, 
+                na maioria das vezes terão prioridade do que propriedades de fundo aplicadas antes do <code>background</code> (isso para o caso de o dev querer combinar
+                propiredades no código).
+            </p>    
+        </span>
+    </div>
+</body>
+</html>
+
