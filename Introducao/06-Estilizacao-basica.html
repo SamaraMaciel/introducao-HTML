@@ -306,10 +306,63 @@
             <p>É possível definir quase todas as propriedades de fundo anteriores só utilizando o background-color.
                 Inserindo os atributos das propriedades anteriores separados por espaço. Para criar camadas é só adicionar os atributos entre vírgula. OBS: proprieades de fundo adicionadas após o <code>background</code>, 
                 na maioria das vezes terão prioridade do que propriedades de fundo aplicadas antes do <code>background</code> (isso para o caso de o dev querer combinar
-                propiredades no código).
+                propriredades no código).
             </p>    
+            <h3>Bordas:</h3>
+            <p>A propriedade <code>border</code> assim como a propriedade <code>background</code> pode ser utilizada para definir várias configurações de outras propriedades de borda,
+                é como se fosse um atalho. Mas há também as propriedades específicas de borda:
+            </p>
+            <ul>
+                <li><code>border-width: 5px;</code> *Define a espessura da borda. Outra maneira de definir a espeçura seria: <code>border-width: 5px 10px 25px 30px;</code> Representando respectivamente topo, direita, fundo, esquerda. Também é possívem representar por <code> 
+                border-width: 10px 20px 30px;</code> Representado respectivamente topo, laterais e fundo. <br><b>OBS:</b> Para que a página entenda e aplique a espessura, primeiro é preciso definir a propriedade
+                <code>border-style</code>. <br>Além de pixel também possível definir a espessura através de palavras chave, como:
+                <ul>
+                    <li>thin; *Equivale a 1px</li>
+                    <li>medium; *Equivale a 3px</li>
+                    <li>thick; *Equivale a 5px</li>
+                </ul>
+                </li>
+                <li><code>border-style: ;</code> *Define o estilo da borda (também é possível combinar estilos). Algumas palavra chave que pode receber são:
+                    <ul>
+                        <li>border-style: solid;</li>
+                        <li><code>border-style: dashed;</code> *Pontilhado com traços</li>
+                        <li><code>border-style: dotted;</code> *Pontilhado com pontos redondos</li>
+                        <li><code>border-style: double;</code> *Margem com linha dupla</li>
+                        <li><code>border-style: groove;</code> *Traz uma linha com efeito 3D</li>
+                        <li><code>border-style: ridge;</code> *Traz uma linha com efeito 3D, é parecido com o groove mas inverte as cores</li>
+                        <li><code>border-style: inset;</code> *Dá a impressão que o elemento está "afundado" na tela</li>
+                        <li><code>border-style: outset;</code> *Dá a impressão que o elemento está "saindo da tela</li> 
+                    </ul>
+                </li>
+                <li><code>borde-color: ;</code> *Define a cor da borda(é possível combinar cores). OBS: Se esse elemento não for definido, a borda ficará com a mesma cor do texto.
+                    A cor pode ser definida através do nome da cor, RGB, etc.
+                </li>
+                <li>É possível combinar as configurações utilizando apenas o border. Ex: <code>border-bottom-style: #red dashed;</code></li>
+                <li><code>border-radius: 20px 10px;</code> *Cria diferentes agulos de cantos arredondados de bordas, pode receber 4 valores(um para cada borda) representado o sentido 
+                    horário começando no canto superior direito. Essa propriedade também recebe valores em porcentagem, então para fazer um elemento quardado ficar redondo, é só definir o valor de 50%.
+                </li>
+                <li><code>border-image</code> *É possível utilizar imagens para definir bordas. Mas a propriedade <code>border-image</code>, assim como a propriedade <code>border</code> é uma shorthand(abreviação).
+                    Segue algumas de suas variações:
+                    <ul>
+                        <li><code>border-image-source: url('../images/exemplo.png');</code> *Para a definição do caminho da imagem funcionar como borda, é imprescindível que se defina a propriedade <code>border</code> antes. (Ex: <code>border: 30px solid; border-image-source: ...;</code>
+                            <br>OBS: Também é possível definir a fonte da imagem como gradiente. Ex: <code>border-image-source: linear-gradient(red, blue);</code>. Essa propriedade também pode receber o valor <code>none</code>.
+                        </li>
+                        <li><code>border-image-slice: 169;</code> *Essa propiedade "fatia" uma imagem em 9 seções retangulares para poder distribuí-las nas bordas, onde as seções 1, 2, 3 e 4 são "quadrados" fatiados respectivamente do topo direito, topo esquerdo, fundo esquerdo e fundo direito da imagem.
+                            As fatias 5, 6 7 e 8 são os "retângulos intermediários que sobraram respectvimente entre as fatias de 1 a 4. E a fatia 9 é o retângulo/quadrado que sobrou no meio da imagem. Para que essa propriedade retorne o efeito esperado, é necessário que o dev teste o valor definido utilizando  dev tools do chrome.
+                            Essa propriedade também é frequente utilizada em conjunto com a propriedade <code>border-image-repeat</code>, que deve ser definida antes. (Ex: <code>border-image-repeat: repeat; border-image-slice: 169 fill;</code>
+                            <br>No exemplo acima temos o valor definido <code> fill</code>, ao definir esse valor a seção 9 do slice, que por padrão é descartada, é inserida no conteiner como imagem de fundo. Se já houver uma imagem de fundo definida, ele vai sobrepor.
+                        </li>
+                        <li><code>border-image-width: ;</code> *Define a largura da imagem no elemento, e pode recer de 1 a 4 valores, um para todas as bordas ou um valor para cada borda. Aqui também é aceito a palavra chave <code>auto</code>. Valores relativos também são interessantes aqui.</li>
+                        <li><code>border-image-repeat: ;</code> *Basicamente divide a área da imagem em 9 slices para caber na borda. Pode receber 4 valores: repeat (trabalha com a repetição das seções 5, 6, 7 e 8), strech (estica um slice da imagem para caber, também trabalha com os sices 5, 6, 7 e 8), 
+                            round (redimensiona as seções 5, 6, 7 e 8 pra que a imagem caiba, repetida ou não, por completo), space(cria um espaço entre os trechos de imagem para que eles caibam por completo, também trabalha com as seções 5, 6, 7 e 8). <br>OBS: essas palavras chave também podem ser combinadas para criar o efeito desejado.
+                        </li>
+                        <li><code>border-image-outset: 10px 20px 30px 40px;</code> *DEfine a distância da borda que a imagem vai ficar da borda. Só recebe valores positivos.</li>
+                        <li><code>border-image: url('...) 169 / 10px / 1 round;</code> *Utilizando essa propriedade para definir todas as outras. No exemplo, respectivamente estão edfinidos os valores para: source, slice, width, outset e repeat. OBS: a / está separando o atributo.</li>
+                    </ul>
+                </li>
+        </ul>
+        <h4>Fontes</h4>
         </span>
     </div>
 </body>
 </html>
-
